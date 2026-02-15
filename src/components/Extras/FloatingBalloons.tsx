@@ -49,7 +49,7 @@ export const FloatingBalloons = () => {
     };
 
     const handleFinish = () => {
-        setScene('card'); // Final scene
+        setScene('timeline'); // Final scene
     };
 
     return (

@@ -59,7 +59,7 @@ export const BucketList = () => {
 
         fire({ particleCount: 100, spread: 100 });
         setTimeout(() => {
-            setScene('balloons');
+            setScene('scrapbook');
         }, 800);
     };
 

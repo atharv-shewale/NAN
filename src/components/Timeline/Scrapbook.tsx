@@ -57,7 +57,7 @@ export const Scrapbook = () => {
     };
 
     const handleFinish = () => {
-        setScene('balloons');
+        setScene('card');
     };
 
     const currentPhoto = photos[currentPage];

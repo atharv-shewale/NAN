@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useAppStore } from '../../store/useAppStore';
 import { Calendar, MapPin, Camera, Gift } from 'lucide-react';
 import { gsap } from 'gsap';
@@ -45,32 +45,20 @@ const memories: Memory[] = [
 
 export const MemoryTimeline = () => {
     const { setScene } = useAppStore();
-    const timelineRef = useRef<HTMLDivElement>(null);
-    const itemsRef = useRef<(HTMLDivElement | null)[]>([]);
-
     useEffect(() => {
-        if (itemsRef.current.length > 0) {
-            itemsRef.current.forEach((item, index) => {
-                if (item) {
-                    gsap.from(item, {
-                        scrollTrigger: {
-                            trigger: item,
-                            start: 'top 80%',
-                            end: 'bottom 20%',
-                            toggleActions: 'play none none reverse',
-                        },
-                        x: index % 2 === 0 ? -100 : 100,
-                        opacity: 0,
-                        duration: 0.8,
-                        ease: 'power2.out',
-                    });
-                }
-            });
-        }
+        // Simple, robust animation targeted by class name
+        gsap.from(".timeline-item", {
+            y: 50,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.2,
+            ease: 'power2.out',
+            clearProps: 'all'
+        });
     }, []);
 
     const handleNext = () => {
-        setScene('scrapbook');
+        setScene('bucket-list');
     };
 
     const [showSecretMessage, setShowSecretMessage] = useState(false);
@@ -87,7 +75,7 @@ export const MemoryTimeline = () => {
                 </p>
             </div>
 
-            <div ref={timelineRef} className="max-w-4xl mx-auto relative min-h-[600px]">
+            <div className="max-w-4xl mx-auto relative min-h-[600px]">
                 {/* Timeline line */}
                 <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-birthday-pink via-birthday-purple to-birthday-blue" />
 
@@ -113,8 +101,7 @@ export const MemoryTimeline = () => {
                 {memories.map((memory, index) => (
                     <div
                         key={index}
-                        ref={(el) => { itemsRef.current[index] = el; }}
-                        className={`flex items-center mb-16 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
+                        className={`timeline-item flex items-center mb-16 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
                             }`}
                     >
                         {/* Content */}

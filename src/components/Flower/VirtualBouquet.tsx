@@ -195,7 +195,7 @@ export const VirtualBouquet = () => {
     };
 
     const handleNext = () => {
-        setScene('wish');
+        setScene('vault');
     };
 
     return (

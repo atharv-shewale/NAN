@@ -83,7 +83,7 @@ export const PuzzleVault = () => {
             setCurrentPuzzle(currentPuzzle + 1);
             setIsUnlocked(false);
         } else {
-            setScene('timeline');
+            setScene('balloons');
         }
     };
 
