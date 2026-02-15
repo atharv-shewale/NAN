@@ -1,0 +1,14 @@
+src/components/Cake/InteractiveCake.tsx(8,51): error TS6133: 'Camera' is declared but its value is never read.
+src/components/Extras/SelfieFrame.tsx(2,20): error TS6133: 'X' is declared but its value is never read.
+src/components/Extras/SelfieFrame.tsx(10,12): error TS6133: 'countdown' is declared but its value is never read.
+src/components/Extras/SelfieFrame.tsx(41,11): error TS6133: 'takePhoto' is declared but its value is never read.
+src/components/Extras/SelfieFrame.tsx(55,12): error TS6133: 'flash' is declared but its value is never read.
+src/components/Flower/VirtualBouquet.tsx(89,25): error TS2322: Type '{ key: number; position: [number, number, number]; color: string; scale: number; rotation: [number, number, number]; type: FlowerType; isPicked: boolean; onClick: () => void; }' is not assignable to type 'IntrinsicAttributes & FlowerProps'.
+  Property 'type' does not exist on type 'IntrinsicAttributes & FlowerProps'.
+src/components/Flower/VirtualBouquet.tsx(140,37): error TS2322: Type '{ key: string; position: [number, number, number]; rotation: [number, number, number]; color: string; type: FlowerType; scale: number; isPicked: true; }' is not assignable to type 'IntrinsicAttributes & FlowerProps'.
+  Property 'type' does not exist on type 'IntrinsicAttributes & FlowerProps'.
+src/components/Welcome/WelcomeScreen.tsx(22,51): error TS2741: Property 'x' is missing in type '{ y: number; }' but required in type '{ x: number; y: number; }'.
+src/hooks/useAudio.ts(2,22): error TS7016: Could not find a declaration file for module 'howler'. 'D:/naan/node_modules/howler/dist/howler.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/howler` if it exists or add a new declaration (.d.ts) file containing `declare module 'howler';`
+src/hooks/useConfetti.ts(1,10): error TS6133: 'useEffect' is declared but its value is never read.
+src/hooks/useConfetti.ts(14,11): error TS6133: 'canvasRef' is declared but its value is never read.
